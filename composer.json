@@ -1,5 +1,6 @@
 {
     "name": "picperf/breakdown",
+    "version": "0.0.1",
     "description": "A little CLI tool for breaking down an HTTP request.",
     "keywords": [
         "http",
@@ -53,6 +54,6 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "bin": [
-        "builds/breakdown"
+        "breakdown"
     ]
 }

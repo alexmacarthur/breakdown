@@ -6,7 +6,9 @@ A command-line tool for breaking down and analyzing HTTP requests.
 [![Total Downloads](https://img.shields.io/packagist/dt/picperf/breakdown.svg)](https://packagist.org/packages/picperf/breakdown)
 [![License](https://img.shields.io/packagist/l/picperf/breakdown.svg)](https://packagist.org/packages/picperf/breakdown)
 
-Breakdown is a CLI tool that helps you analyze HTTP requests, providing detailed information about request headers, response times, and more.
+Breakdown is a CLI tool that helps you analyze HTTP requests, providing detailed information about request headers, response times, and other connection details.
+
+![](./screenshot.png)
 
 ## Installation
 
@@ -22,11 +24,15 @@ composer global require picperf/breakdown
 breakdown <url>
 ```
 
-## Features
+## Metrics You'll Get
 
--   Analyze HTTP request/response details
--   View headers, timing information, and more
--   Easy to use command-line interface
+-   time-to-first-byte (TTFB)
+-   response size
+-   redirects
+-   TCP connection duration
+-   TLS handshake speed
+-   DNS lookup time
+-   ...and maybe more!
 
 ## License
 

@@ -24,9 +24,9 @@ breakdown <url>
 
 ## Features
 
-- Analyze HTTP request/response details
-- View headers, timing information, and more
-- Easy to use command-line interface
+-   Analyze HTTP request/response details
+-   View headers, timing information, and more
+-   Easy to use command-line interface
 
 ## License
 

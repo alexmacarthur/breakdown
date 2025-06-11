@@ -1,9 +1,8 @@
 <?php
 
-use App\Bootstrap;
 use LaravelZero\Framework\Application;
+use PicPerf\Breakdown\Bootstrap;
 
-// Ensure required directories exist
 Bootstrap::ensureDirectoriesExist();
 
 return Application::configure(basePath: dirname(__DIR__))->create();

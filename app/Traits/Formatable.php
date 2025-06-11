@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Traits;
+namespace PicPerf\Breakdown\Traits;
 
 use Illuminate\Support\Number;
 use Symfony\Component\HttpFoundation\Response;

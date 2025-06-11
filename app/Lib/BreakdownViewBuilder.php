@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Lib;
+namespace PicPerf\Breakdown\Lib;
 
-use App\Dtos\RequestBreakdown;
-use App\Traits\Formatable;
+use PicPerf\Breakdown\Dtos\RequestBreakdown;
+use PicPerf\Breakdown\Traits\Formatable;
 
 use function Termwind\render;
 use function Termwind\terminal;

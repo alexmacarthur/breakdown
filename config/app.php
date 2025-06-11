@@ -54,7 +54,7 @@ return [
     */
 
     'providers' => [
-        App\Providers\AppServiceProvider::class,
+        PicPerf\Breakdown\Providers\AppServiceProvider::class,
     ],
 
 ];

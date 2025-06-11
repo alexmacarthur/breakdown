@@ -14,27 +14,27 @@
             <tbody>
                 <tr>
                     <td class="font-bold text-gray">Total Time</td>
-                    <td class="font-bold text-blue">{{ number_format($breakdown->timings->durations->totalTime, 2) }} {{ $breakdown->unit }}</td>
+                    <td class="font-bold text-white">{{ number_format($breakdown->timings->durations->totalTime, 2) }} {{ $breakdown->unit }}</td>
                 </tr>
                 <tr>
                     <td class="font-bold text-gray">TTFB</td>
-                    <td class="font-bold text-green">{{ $breakdown->timeToFirstByte }} {{ $breakdown->unit }}</td>
+                    <td class="font-bold text-white">{{ $breakdown->timeToFirstByte }} {{ $breakdown->unit }}</td>
                 </tr>
                 <tr>
                     <td class="font-bold text-gray">Response Size</td>
-                    <td class="font-bold text-cyan">{{ number_format($breakdown->responseSizeInBytes / 1024, 1) }} KB</td>
+                    <td class="font-bold text-white">{{ number_format($breakdown->responseSizeInBytes / 1024, 1) }} KB</td>
                 </tr>
                 <tr>
-                    <td class="font-bold text-gray">Final Status</td>
+                    <td class="font-bold text-gray">Status</td>
                     <td class="font-bold text-white">{{ $breakdown->statusCode }}</td>
                 </tr>
                 <tr>
-                    <td class="font-bold text-gray">Total Requests</td>
-                    <td class="font-bold text-white">{{ $breakdown->redirectCount + 1 }}</td>
+                    <td class="font-bold text-gray">Total Redirects</td>
+                    <td class="font-bold text-white">{{ $breakdown->redirectCount }}</td>
                 </tr>
                 <tr>
-                    <td class="font-bold text-gray">Redirect Overhead</td>
-                    <td class="font-bold text-white">@if($breakdown->redirectTime > 0){{ $breakdown->redirectTime }} {{ $breakdown->unit }}@else—@endif</td>
+                    <td class="font-bold text-gray">Redirect Time</td>
+                    <td class="font-bold text-white">@if($breakdown->redirectTime > 0){{ $breakdown->redirectTime }} {{ $breakdown->unit }}@else{{"0 ms"}}@endif</td>
                 </tr>
                 <tr>
                     <td class="font-bold text-gray">Content Size</td>
@@ -63,7 +63,7 @@
 
     @if($breakdown->location)
         <div>
-            <h2 class="font-bold text-sky-500 uppercase mb-1">📍 Server Location</h2>
+            <h2 class="font-bold text-sky-500 uppercase mb-1">📍 Your Location</h2>
             <table>
                 <tbody>
                     <tr>

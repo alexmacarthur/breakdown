@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Lib;
+namespace PicPerf\Breakdown\Lib;
 
-use App\Dtos\Header;
-use App\Dtos\Redirect;
-use App\Dtos\RequestBreakdown;
-use App\Dtos\RequestBreakdownDurations;
-use App\Dtos\RequestBreakdownLocation;
-use App\Dtos\RequestBreakdownRawTimingBreakdown;
-use App\Dtos\RequestBreakdownTimings;
-use App\Traits\Formatable;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+use PicPerf\Breakdown\Dtos\Header;
+use PicPerf\Breakdown\Dtos\Redirect;
+use PicPerf\Breakdown\Dtos\RequestBreakdown;
+use PicPerf\Breakdown\Dtos\RequestBreakdownDurations;
+use PicPerf\Breakdown\Dtos\RequestBreakdownLocation;
+use PicPerf\Breakdown\Dtos\RequestBreakdownRawTimingBreakdown;
+use PicPerf\Breakdown\Dtos\RequestBreakdownTimings;
+use PicPerf\Breakdown\Traits\Formatable;
 
 class RequestBreakdownBuilder
 {

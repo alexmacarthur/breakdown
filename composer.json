@@ -1,6 +1,6 @@
 {
     "name": "picperf/breakdown",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "A little CLI tool for breaking down an HTTP request.",
     "keywords": [
         "http",
@@ -34,9 +34,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/",
-            "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "PicPerf\\Breakdown\\": "app/"
         }
     },
     "autoload-dev": {

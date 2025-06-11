@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Services;
+namespace PicPerf\Breakdown\Services;
 
-use App\Dtos\RequestBreakdown;
-use App\Lib\RequestBreakdownBuilder;
-use App\Traits\Formatable;
 use Illuminate\Support\Str;
+use PicPerf\Breakdown\Dtos\RequestBreakdown;
+use PicPerf\Breakdown\Lib\RequestBreakdownBuilder;
+use PicPerf\Breakdown\Traits\Formatable;
 
 class RequestBreakdownService
 {

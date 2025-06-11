@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Commands;
+namespace PicPerf\Breakdown\Commands;
 
-use App\Lib\BreakdownViewBuilder;
-use App\Services\RequestBreakdownService;
 use LaravelZero\Framework\Commands\Command;
+use PicPerf\Breakdown\Lib\BreakdownViewBuilder;
+use PicPerf\Breakdown\Services\RequestBreakdownService;
 
 use function Termwind\render;
 

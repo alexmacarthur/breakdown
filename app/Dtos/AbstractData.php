@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Dtos;
+namespace PicPerf\Breakdown\Dtos;
 
 use ReflectionClass;
 use ReflectionProperty;

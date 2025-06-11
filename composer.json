@@ -1,6 +1,6 @@
 {
     "name": "picperf/breakdown",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A little CLI tool for breaking down an HTTP request.",
     "keywords": [
         "http",
@@ -19,17 +19,17 @@
         }
     ],
     "require": {
-        "php": "^8.2.0"
-    },
-    "require-dev": {
+        "php": "^8.2.0",
         "illuminate/http": "^11.45",
         "illuminate/view": "^11.5",
         "laravel-zero/framework": "^11.36.1",
+        "nunomaduro/termwind": "^2.3",
+        "symfony/http-foundation": "^7.3"
+    },
+    "require-dev": {
         "laravel/pint": "^1.22",
         "mockery/mockery": "^1.6.12",
-        "nunomaduro/termwind": "^2.3",
-        "pestphp/pest": "^3.7.1",
-        "symfony/http-foundation": "^7.3"
+        "pestphp/pest": "^3.7.1"
     },
     "autoload": {
         "psr-4": {

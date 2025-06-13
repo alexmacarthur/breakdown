@@ -14,11 +14,6 @@ abstract class AbstractData
     {
         $reflection = new ReflectionClass(static::class);
         $constructor = $reflection->getConstructor();
-
-        if (! $constructor) {
-            return new static;
-        }
-
         $parameters = $constructor->getParameters();
         $args = [];
 
@@ -31,13 +26,10 @@ abstract class AbstractData
                 if ($type && ! $type->isBuiltin()) {
                     $typeName = $type->getName();
                     if (is_subclass_of($typeName, self::class)) {
-                        // If value is already an instance of the expected type, use it as-is
                         if ($value instanceof $typeName) {
-                            // Value is already the correct type, no conversion needed
                         } elseif (is_array($value)) {
                             $value = $typeName::from($value);
                         }
-                        // If it's neither an array nor the expected type, leave it as-is
                     }
                 }
             }
@@ -45,7 +37,7 @@ abstract class AbstractData
             $args[] = $value;
         }
 
-        return new static(...$args);
+        return $reflection->newInstanceArgs($args);
     }
 
     /**

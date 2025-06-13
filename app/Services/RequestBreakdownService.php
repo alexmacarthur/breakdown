@@ -13,9 +13,9 @@ class RequestBreakdownService
 
     private RequestBreakdownBuilder $builder;
 
-    public function __construct(RequestBreakdownBuilder $builder)
+    public function __construct()
     {
-        $this->builder = $builder;
+        $this->builder = new RequestBreakdownBuilder();
     }
 
     public function analyze(string $url): RequestBreakdown

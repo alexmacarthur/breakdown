@@ -3,8 +3,9 @@
 namespace PicPerf\Breakdown\Lib;
 
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use PicPerf\Breakdown\Dtos\Header;
 use PicPerf\Breakdown\Dtos\Redirect;
 use PicPerf\Breakdown\Dtos\RequestBreakdown;
@@ -105,22 +106,23 @@ class RequestBreakdownBuilder
     public function getTestLocation(): ?array
     {
         try {
-            $response = Http::get('http://ip-api.com/json/');
+            $client = new Client();
+            $response = $client->get('http://ip-api.com/json/');
+            $data = json_decode($response->getBody(), true);
 
-            if ($response->successful() && $response->json()['status'] === 'success') {
+            if ($response->getStatusCode() === 200 && isset($data['status']) && $data['status'] === 'success') {
                 return [
-                    'city' => $response->json('city', 'Unknown'),
-                    'region' => $response->json('regionName', 'Unknown'),
-                    'country' => $response->json('country', 'Unknown'),
-                    'latitude' => (float) $response->json('lat', 0.0),
-                    'longitude' => (float) $response->json('lon', 0.0),
-                    'ip' => $response->json('query', 'Unknown'),
+                    'city' => $data['city'] ?? 'Unknown',
+                    'region' => $data['regionName'] ?? 'Unknown',
+                    'country' => $data['country'] ?? 'Unknown',
+                    'latitude' => (float) ($data['lat'] ?? 0.0),
+                    'longitude' => (float) ($data['lon'] ?? 0.0),
+                    'ip' => $data['query'] ?? 'Unknown',
                 ];
             }
 
             return self::UNKNOWN_LOCATION;
-        } catch (\Exception $e) {
-            dd($e);
+        } catch (\Exception|GuzzleException $e) {
             Log::error('Geolocation request failed', [
                 'message' => $e->getMessage(),
                 'url' => 'http://ip-api.com/json/',

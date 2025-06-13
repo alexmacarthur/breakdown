@@ -26,11 +26,11 @@ class BreakdownViewBuilder
             $timingLabels['redirectTime'] = ['Redirect Time', '↪️', 'text-magenta'];
         }
 
-        $html = view('output', [
+        $html = Renderer::view([
             'breakdown' => $this->enforceCharacterMaximumOnAllRedirectHeaderValues($breakdownData),
             'timingLabels' => $timingLabels,
             'terminalWidth' => terminal()->width(),
-        ])->render();
+        ]);
 
         render($this->removeLineBreaks($html));
     }

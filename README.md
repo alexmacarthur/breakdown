@@ -1,6 +1,6 @@
 # Breakdown
 
-A command-line tool for breaking down and analyzing HTTP requests.
+A command-line tool for breaking down and analyzing HTTP requests. A web-based version of the tool also [available here](https://picperf.io/request/breakdown).
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/picperf/breakdown.svg)](https://packagist.org/packages/picperf/breakdown)
 [![Total Downloads](https://img.shields.io/packagist/dt/picperf/breakdown.svg)](https://packagist.org/packages/picperf/breakdown)
